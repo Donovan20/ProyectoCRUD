@@ -239,6 +239,7 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
+INSERT INTO puestos (job_id,puesto) VALUES (1,'Gerente'),(2,'Encargado');
 
 CREATE OR REPLACE VIEW p_view AS
 SELECT p.idProducto as id, p.nombreProducto as Producto, p.precio as Precio, s.nombreSucursal as Sucursal, c.nombreCategoria as Categoria, pr.nombreProveedor as Proveedor 
