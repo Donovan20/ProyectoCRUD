@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login CRUD</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+</head>
+<body class="body">
+    <div class="login">
+        <div class="avatar">
+            <img src="{% static 'img/avatar.png' %}" alt="">
+        </div>
+        <h2>User Login</h2>
+        <div class="formu">
+            <form method="POST"> 
+                {% csrf_token %}
+                <input type="text" placeholder="Correo" class="input" name="correo">
+                <input type="password" placeholder="Contraseña" class="input" name="password">
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+    {% for message in messages %}
+        {% if message.tags %}
+            <script>alert('{{message}}');</script>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

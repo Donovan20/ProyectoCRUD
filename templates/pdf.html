@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <title>CRUD System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/css/estilospdf.css">
+</head>
+
+<body>
+    <div class="nombre" id="nombre">
+        <h2><b>Reporte {{tabla}}</b></h2>
+    </div>
+    <div>
+    <table>
+        <thead>
+            <tr>
+                {% for e in esq%}
+                    <th>{{e.0}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato in datos %}
+                <tr>
+                    {% for v in dato%}
+                        <td>{{v}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

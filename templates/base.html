@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <title>CRUD System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/menu.css'%}">
+  <script src="{% static 'js/funciones.js' %}"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/1df1957aec.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-image:linear-gradient(rgb(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));">
+    <!-- HEADER -->
+    <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+        <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="/menu/"><span class="glyphicon glyphicon-home" style="color: blueviolet"></span></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-menubuilder">
+                <ul class="nav navbar-nav navbar-left">
+    
+                    <li><a href="/tabla/Producto/" class="hvr-underline-reveal">Productos</a></li>
+                    <li><a href="/tabla/Categoria/" class="hvr-underline-reveal">Categorias</a></li>
+                    {% if request.session.usuario.0.4 == 1 or request.session.usuario.0.4 == 2 %}
+                    <li><a href="/tabla/Empleado/" class="hvr-underline-reveal">Empleados</a></li>
+                    {% endif %}
+                    <li><a href="/tabla/Sucursal/" class="hvr-underline-reveal">Sucursales</a></li>
+                    {% if request.session.usuario.0.4 == 1 or request.session.usuario.0.4 == 2 %}
+                    <li><a href="/tabla/Departamento/" class="hvr-underline-reveal">Departamentos</a></li>
+                    {% endif %}
+                    {% if request.session.usuario.0.4 == 1 or request.session.usuario.0.4 == 2 %}
+                    <li><a href="/tabla/Proveedor/" class="hvr-underline-reveal">Proveedores</a></li>
+                    {% endif %}
+                    {% if request.session.usuario.0.4 == 1 or request.session.usuario.0.4 == 2 %}
+                    <li><a href="/tabla/Puesto/" class="hvr-underline-reveal">Puestos</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/deslogear/" class="hvr-underline-reveal">Salir</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

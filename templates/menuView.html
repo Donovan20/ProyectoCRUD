@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- CRUD TABLE -->
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2><b>{{tabla}}</b></h2>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <a href="/csv/{{tabla}}/" class="btn" style="background: #4dabf7" ><span> <i class="fas fa-file-csv"></i> Descargar CSV</span></a>
+                        <a target="_blank" href="/pdf/{{tabla}}/" class="btn" style="background: #c9302c"><span> <i class="fas fa-file-pdf"></i> Descargar PDF</span></a>					
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        {% for e in esq%}
+                            <th>{{e.0}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dato in datos %}
+                        <tr>
+                            {% for v in dato%}
+                                <td>{{v}}</td>
+                            {% endfor %}
+                            <td></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+,id,producto,categoria,sucursal,proveedor
+0,2,Moto G,Smartphone,San Juan del Rio,Motorola
+1,3,Moto G,Smartphone,Huimilpan,Motorola
+2,4,Moto X,Smartphone,Querétaro,Motorola
+3,5,G3,Smartphone,Corregidora,LG
+4,6,One M7,Smartphone,San Juan del Rio,HTC
+5,7,G3,Smartphone,San Juan del Rio,LG
+6,8,G3,Smartphone,Huimilpan,LG
+7,9,Batería,Batería,Querétaro,Samsung
+8,10,Galaxy Tab,Tablet,Corregidora,Samsung
+9,11,Galaxy Tab,Tablet,Corregidora,Samsung
+10,12,Galaxy S4,Smartphone,San Juan del Rio,Samsung
+11,13,G2,Smartphone,Corregidora,LG
+12,14,Moto X,Smartphone,Corregidora,Motorola
+13,15,Funda,Funda,San Juan del Rio,Samsung
+14,16,One M8,Smartphone,Querétaro,HTC
+15,17,Moto X,Smartphone,Corregidora,Motorola
+16,18,G2,Smartphone,Querétaro,LG
+17,19,Moto X,Smartphone,Huimilpan,Motorola
+18,20,Moto X,Smartphone,Querétaro,Motorola
+19,21,Galaxy S4,Smartphone,Querétaro,Samsung
