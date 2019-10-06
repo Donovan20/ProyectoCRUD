@@ -60,7 +60,7 @@ CREATE TABLE `empleado` (
   `idDepartamento` int(3) DEFAULT NULL,
   `job_id` int(3) DEFAULT NULL,
   `correo` varchar(150) DEFAULT NULL,
-  `pass` varchar(12) DEFAULT NULL
+  `pass` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
