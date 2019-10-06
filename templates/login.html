@@ -15,6 +15,13 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'vendor-log/daterangepicker/daterangepicker.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/util-log.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/main-log.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/mod-error.css'%}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 
 	<body>
@@ -46,4 +53,31 @@
 			</div>
 		</div>
 	</body>
+	{% for message in messages %}
+    <!-- Error Modal HTML -->
+	{% if message.tags == 'error' %}
+	<script type="text/javascript">
+		$(function () {
+			$('#errorModal').modal('show');
+		});
+	</script>
+    <div id="errorModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header1">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <h4>¡Error!</h4>	
+                    <p>{{message}}</p>
+                    <button class="btn btn-success" data-dismiss="modal">Intentar de nuevo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
 </html>

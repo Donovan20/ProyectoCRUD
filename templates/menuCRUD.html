@@ -32,6 +32,9 @@
                             {% for v in dato%}
                                 <td>{{v}}</td>
                             {% endfor %}
+                            {% if tabla == 'Empleado' %}
+                                <td></td>
+                            {% endif %}
                             <td></td>
                             <td>
                                 <a href="#editModal" class="edit" data-toggle="modal" onclick="completar('{{dato.0}}','{{csrf_token}}','{{tabla}}')">Editar</a>
@@ -115,4 +118,55 @@
             </div>
         </div>
     </div>
+    {% for message in messages %}
+    <!-- Error Modal HTML -->
+    {% if message.tags == 'error' %}
+    <script type="text/javascript">
+		$(function () {
+			$('#errorModal').modal('show');
+		});
+	</script>
+    <div id="errorModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header1">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <h4>¡Error!</h4>	
+                    <p>{{message}}</p>
+                    <button class="btn btn-success" data-dismiss="modal">Intentar de nuevo</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+    {% elif message.tags == 'success' %}
+    <!-- Success Modal HTML -->
+    <script type="text/javascript">
+		$(function () {
+			$('#successModal').modal('show');
+		});
+	</script>
+    <div id="successModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header2">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <h4>¡Correcto!</h4>	
+                    <p>{{message}}</p>
+                    <button class="btn btn-success" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    {% endif %}
+    {% endfor %}
 {% endblock %}
